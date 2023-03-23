@@ -18,7 +18,7 @@ Console.WriteLine("Введите позицию x элемента: ");
 int x = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите позицию y элемента: ");
 int y = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(FindElemnt(x, y) ? "Да" : "Нет");
+Console.WriteLine(FindElemnt(array2d, x, y) ? "Да" : "Нет");
 
 int[,] CreateMatrix(int rows, int columns, int min, int max)
 {
@@ -46,14 +46,7 @@ void PrintArray(int[,] matrix)
      }
 }
 
-bool FindElemnt(int coordX, int coordY)
+bool FindElemnt(int[,] matrix, int coordX, int coordY)
 {
-    for (int i = 0; i < array2d.GetLength(0); i++)
-    {
-        for (int j = 0; j < array2d.GetLength(1); j++)
-        {
-            if (coordX == i && coordY == j) return true;
-        }
-    }
-    return false;
+   return 0 < coordX && coordX < matrix.GetLength(0) && 0 < coordY && coordY < matrix.GetLength(1);
 }
