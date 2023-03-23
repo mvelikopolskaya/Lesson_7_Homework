@@ -48,5 +48,5 @@ void PrintArray(int[,] matrix)
 
 bool FindElemnt(int[,] matrix, int coordX, int coordY)
 {
-   return 0 < coordX && coordX < matrix.GetLength(0) && 0 < coordY && coordY < matrix.GetLength(1);
+   return 0 <= coordX && coordX < matrix.GetLength(0) && 0 <= coordY && coordY < matrix.GetLength(1);
 }
