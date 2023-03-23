@@ -14,11 +14,11 @@
 int[,] array2d = CreateMatrix(3, 4, 0, 10);
 PrintArray(array2d);
 
-Console.WriteLine("Введите позицию x элемента: ");
+Console.Write("Введите позицию x элемента: ");
 int x = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите позицию y элемента: ");
+Console.Write("Введите позицию y элемента: ");
 int y = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(FindElemnt(array2d, x, y) ? "Да" : "Нет");
+Console.WriteLine(FindElemnt(array2d, x, y) ? array2d[x - 1, y - 1] : "Данного элемнта нет");
 
 int[,] CreateMatrix(int rows, int columns, int min, int max)
 {
@@ -48,5 +48,5 @@ void PrintArray(int[,] matrix)
 
 bool FindElemnt(int[,] matrix, int coordX, int coordY)
 {
-   return 0 <= coordX && coordX < matrix.GetLength(0) && 0 <= coordY && coordY < matrix.GetLength(1);
+   return 0 <= coordX - 1 && coordX - 1 < matrix.GetLength(0) && 0 <= coordY - 1 && coordY - 1 < matrix.GetLength(1);
 }
